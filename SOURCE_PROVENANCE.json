@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/d00rsfan/BiglyBTC-plugin-azmsgsync",
+  "local_review_commit": "4ea971c87cdaf5f2c792e220c4dd66643af41a14",
+  "original_biglybt_commit": "cb8c6cb9bb97916cbc7e80338a017200ffc3e71f",
+  "sdk_commit": null,
+  "ci_enabled": false,
+  "scope": "msgsync development source foundation only; no binary/catalogue release or full application/plugin parity claim",
+  "files_sha256": {
+    ".gitignore": "ef2d3a662976b2c26a55d13b98b4be552bc693a37d446e8f29db5ea5b32a3b90",
+    "CMakeLists.txt": "e15fb90b238b661ffc822cb37cf233359a265ae1cea6fd6c762990ffb5b1f72b",
+    "COPYING": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+    "README.md": "66fe3328e0dd20b6efb47047c645d9f24c26d1f18ebebc8454515c2eb821ef40",
+    "bounds_test.cpp": "280f950bd38ee35237054189b5bbcb68019d117d791fea6f3ceec2bba50735ae",
+    "envelope.cpp": "3cf033b2873de6920a7d87b0dd1107fdcf73da26eaa61c83fda8cc4683cf8eba",
+    "envelope.hpp": "1ca6c6e2fa825200d5a14da5c38870ed598e373e09791500d3b58f91545002ff",
+    "envelope_driver.cpp": "9d410642f73cbfc4330e045659ea0590fc2efef2277c4813206d42d5d52ab781",
+    "fixture_test.py": "ea5b6248f938685e1ad3ddbe77c8e1232c680b067befac81472600f0cd5d7769",
+    "LICENSE": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73",
+    "fixtures/.gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "fixtures/commands.txt": "eabb9fe888af084a94653969c321bf87c7e23b1802b48d0aa461f98b6f0af1e2",
+    "fixtures/encrypt-input.txt": "29b01e4ce4eb5db28c961cd24ee2662114e3303c5d18591838008aefbc787a56",
+    "fixtures/expected.txt": "51970fe73ed568885b14446dd91dcc4d44a89e320eba968b8f83613ea5ec8a91",
+    "fixtures/manifest.json": "7ebabed9595c6178042ea81b75312b0de8eb6b12c3cb50e76a4196ee83ae5a72",
+    "ci/compatibility.yml": "845e5dca40f5ce8768de2eb542fb7d007ac2edbfd84d912b6e8823e2aadc7122"
+  }
+}

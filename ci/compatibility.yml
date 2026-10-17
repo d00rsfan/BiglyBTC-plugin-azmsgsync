@@ -1,0 +1,41 @@
+name: 'Message-sync envelopes offline compatibility'
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compatibility:
+    runs-on: [self-hosted, Linux, X64, biglybtc-linux]
+    timeout-minutes: 20
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        compiler: [gcc, clang, asan]
+    env:
+      TMPDIR: /tmp
+      ASAN_OPTIONS: detect_leaks=1:abort_on_error=1
+      ASAN_SYMBOLIZER_PATH: /usr/lib/llvm-24/bin/llvm-symbolizer
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Compile and replay offline original observations
+        shell: bash
+        env:
+          COMPILER_KIND: ${{ matrix.compiler }}
+        run: |
+          build_type=Release
+          compiler=/usr/bin/g++-16
+          flags=
+          if [[ "$COMPILER_KIND" != gcc ]]; then
+            compiler=/usr/lib/llvm-24/bin/clang++
+            flags=--gcc-install-dir=/usr/lib/gcc/x86_64-linux-gnu/16
+          fi
+          if [[ "$COMPILER_KIND" == asan ]]; then
+            build_type=Debug
+            flags="$flags -fsanitize=address,undefined -fno-omit-frame-pointer"
+          fi
+          cmake -S . -B "$RUNNER_TEMP/biglybtc-msgsync-$COMPILER_KIND" -G Ninja -DCMAKE_BUILD_TYPE="$build_type" -DCMAKE_CXX_COMPILER="$compiler" -DCMAKE_CXX_FLAGS="$flags"
+          nice -n 5 cmake --build "$RUNNER_TEMP/biglybtc-msgsync-$COMPILER_KIND" -j2
+          ctest --test-dir "$RUNNER_TEMP/biglybtc-msgsync-$COMPILER_KIND" --output-on-failure
