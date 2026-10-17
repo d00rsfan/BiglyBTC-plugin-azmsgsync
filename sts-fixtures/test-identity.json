@@ -1,0 +1,5 @@
+{
+  "public": "x03EEA2BAE7E1497842F2DE7769CFE9C989C072AD696F48034A",
+  "private": "x01",
+  "notice": "PUBLIC TEST VECTOR ONLY: known scalar ONE on prime192v2. Never use as an application identity."
+}
