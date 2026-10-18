@@ -4,13 +4,13 @@
   "original_biglybt_commit": "cb8c6cb9bb97916cbc7e80338a017200ffc3e71f",
   "sdk_commit": null,
   "core_commit": null,
-  "ci_enabled": false,
+  "ci_enabled": true,
   "scope": "msgsync development source foundation only; no binary/catalogue release or full application/plugin parity claim",
   "files_sha256": {
     ".gitignore": "ef2d3a662976b2c26a55d13b98b4be552bc693a37d446e8f29db5ea5b32a3b90",
     "CMakeLists.txt": "e7d66833f12680fb40c71963e513a255c06231baf4e209b17b3ac4304d412de3",
     "COPYING": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
-    "README.md": "b8c1f6a124d93dc99cee8f114ecfa67b1c8c4645ff5023f3163c41db3a25295a",
+    "README.md": "0311681c56d86886e3c22d2579dfa9a813a089e9cd5705faf0b9ff106cf028eb",
     "bounds_test.cpp": "280f950bd38ee35237054189b5bbcb68019d117d791fea6f3ceec2bba50735ae",
     "envelope.cpp": "3cf033b2873de6920a7d87b0dd1107fdcf73da26eaa61c83fda8cc4683cf8eba",
     "envelope.hpp": "1ca6c6e2fa825200d5a14da5c38870ed598e373e09791500d3b58f91545002ff",
@@ -34,6 +34,15 @@
     "fixtures/encrypt-input.txt": "29b01e4ce4eb5db28c961cd24ee2662114e3303c5d18591838008aefbc787a56",
     "fixtures/expected.txt": "51970fe73ed568885b14446dd91dcc4d44a89e320eba968b8f83613ea5ec8a91",
     "fixtures/manifest.json": "7ebabed9595c6178042ea81b75312b0de8eb6b12c3cb50e76a4196ee83ae5a72",
-    "ci/compatibility.yml": "845e5dca40f5ce8768de2eb542fb7d007ac2edbfd84d912b6e8823e2aadc7122"
+    ".github/workflows/compatibility.yml": "845e5dca40f5ce8768de2eb542fb7d007ac2edbfd84d912b6e8823e2aadc7122"
+  },
+  "ci_activation": {
+    "date": "2026-10-18",
+    "previous_public_commit": "3d8e761639b59b4310d1950b7227cfae4272d749",
+    "transport": "ssh",
+    "workflow_path": ".github/workflows/compatibility.yml",
+    "runner": "self-hosted Linux X64 biglybtc-linux",
+    "mode": "workflow_dispatch",
+    "note": "Workflow registered; this manifest does not assert a successful remote run."
   }
 }
